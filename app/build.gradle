@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 22
@@ -17,9 +18,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/LICENSE.txt'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.android.gms:play-services-maps:7.5.0'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+    provided 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'org.twitter4j:twitter4j-core:4.0.2'
+    compile 'org.twitter4j:twitter4j-async:4.0.2'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+    provided 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compile 'com.path:android-priority-jobqueue:1.1.2'
+
 }
+
