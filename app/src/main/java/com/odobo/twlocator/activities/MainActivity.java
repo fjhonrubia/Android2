@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.odobo.twlocator.R;
 import com.odobo.twlocatorapi.util.twitter.ConnectTwitterTask;
 
@@ -12,6 +15,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends ActionBarActivity implements ConnectTwitterTask.OnConnectTwitterListener {
 
+    GoogleMap googleMap;
     ConnectTwitterTask twitterTask;
 
     @Override
@@ -27,6 +31,8 @@ public class MainActivity extends ActionBarActivity implements ConnectTwitterTas
         twitterTask.setListener(this);
 
         twitterTask.execute();
+
+        this.initializeMap();
 
     }
 
@@ -57,4 +63,20 @@ public class MainActivity extends ActionBarActivity implements ConnectTwitterTas
     public void twitterConnectionFinished() {
 
     }
+
+    private void initializeMap() {
+        if (googleMap == null) {
+            googleMap = ((MapFragment) getFragmentManager().findFragmentById(
+                    R.id.map)).getMap();
+
+            // check if map is created successfully or not
+            if (googleMap == null) {
+                Toast.makeText(getApplicationContext(),
+                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
+
+    }
+
 }
