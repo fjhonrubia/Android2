@@ -24,4 +24,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'org.twitter4j:twitter4j-core:4.0.2'
     compile 'org.twitter4j:twitter4j-async:4.0.2'
+    compile 'com.google.android.gms:play-services-maps:7.5.0'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+
+
 }
