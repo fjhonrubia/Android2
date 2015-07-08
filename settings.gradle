@@ -1,1 +1,1 @@
-include ':app', ':twlocatorapi'
+include ':twlocatorapi', ':app'
