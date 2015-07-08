@@ -91,26 +91,7 @@ public class TwitterHelper {
 
 		editor.commit();
 	}
-/*
-	public TwitterStream createNewTwitterStream() {
-		TwitterStream twitterStream;
 
-		String oauthAccessToken = sharedPreferences.getString(TwitterConsts.PREF_KEY_TOKEN, "");
-		String oAuthAccessTokenSecret = sharedPreferences.getString(TwitterConsts.PREF_KEY_SECRET, "");
-
-		ConfigurationBuilder confbuilder = new ConfigurationBuilder();
-		Configuration conf = confbuilder
-				.setOAuthConsumerKey(TwitterPrivateKeyAndSecret.CONSUMER_KEY)
-				.setOAuthConsumerSecret(TwitterPrivateKeyAndSecret.CONSUMER_SECRET)
-				.setOAuthAccessToken(oauthAccessToken)
-				.setOAuthAccessTokenSecret(oAuthAccessTokenSecret)
-				.build();
-		twitterStream = new TwitterStreamFactory(conf).getInstance();
-
-		return twitterStream;
-
-	}
-*/
 	public Twitter getTwitter() {
 		twitter = (new TwitterFactory()).getInstance();
 		twitter.setOAuthConsumer(TwitterPrivateKeyAndSecret.CONSUMER_KEY, TwitterPrivateKeyAndSecret.CONSUMER_SECRET);
