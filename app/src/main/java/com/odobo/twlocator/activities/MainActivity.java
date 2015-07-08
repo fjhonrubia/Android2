@@ -6,10 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.odobo.twlocator.R;
+import com.odobo.twlocatorapi.util.twitter.ConnectTwitterTask;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements ConnectTwitterTask.OnConnectTwitterListener {
+
+    ConnectTwitterTask twitterTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,11 @@ public class MainActivity extends ActionBarActivity {
         ButterKnife.bind(this);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        twitterTask = new ConnectTwitterTask(this);
+        twitterTask.setListener(this);
+
+        twitterTask.execute();
 
     }
 
@@ -43,5 +51,10 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void twitterConnectionFinished() {
+
     }
 }

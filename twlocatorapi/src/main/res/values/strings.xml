@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TwLocatorAPI</string>
+    <string name="authorize_this_app">Please, authorize this App</string>
 </resources>

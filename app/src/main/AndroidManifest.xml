@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.odobo.twlocator" >
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".TwLocatorApplication"
         android:allowBackup="true"
@@ -10,10 +13,22 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+
+            <!-- Catch Twitter's oauth response from browser-->
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="t4jsample"
+                    android:scheme="oauth" />
             </intent-filter>
         </activity>
     </application>
