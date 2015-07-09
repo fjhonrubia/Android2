@@ -71,6 +71,13 @@
                     android:scheme="oauth" />
             </intent-filter>
         </activity>
+
+        <!-- Content providers -->
+
+        <provider
+            android:name="com.odobo.twlocatorapi.util.contentprovider.TweetsProvider"
+            android:authorities="com.odobo.twlocator.provider" />
+
     </application>
 
 </manifest>

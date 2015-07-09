@@ -10,23 +10,21 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.odobo.twlocatorapi.model.Tweet;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
 
-import twitter4j.Status;
-
 public class MapGeoTweets {
-    public static void addGeoTweetsToMap(List<Status> tweets, final GoogleMap googleMap, final Context context) {
+    public static void addGeoTweetsToMap(List<Tweet> tweets, final GoogleMap googleMap, final Context context) {
         if (tweets == null || googleMap == null) {
             return;
         }
 
-        for (final Status tweet: tweets) {
-            if (tweet.getGeoLocation() != null) {
-                final LatLng position = new LatLng(tweet.getGeoLocation().getLatitude(), tweet.getGeoLocation().getLongitude());
-                final String profileImageUrl = tweet.getUser().getProfileImageURL();
+        for (final Tweet tweet: tweets) {
+                final LatLng position = new LatLng(tweet.getLatitude(), tweet.getLongitude());
+                final String profileImageUrl = tweet.getProfileUrl();
 
                 new Thread(new Runnable() {
                     @Override
@@ -44,15 +42,10 @@ public class MapGeoTweets {
                             @Override
                             public void run() {
                                 googleMap.addMarker(marker);
-
                             }
                         });
                     }
                 }).start();
-
-
-
-            }
         }
     }
 }
