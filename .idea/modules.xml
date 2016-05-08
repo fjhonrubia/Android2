@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TwLocator.iml" filepath="$PROJECT_DIR$/TwLocator.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/twlocatorapi/twlocatorapi.iml" filepath="$PROJECT_DIR$/twlocatorapi/twlocatorapi.iml" />
     </modules>
   </component>
 </project>

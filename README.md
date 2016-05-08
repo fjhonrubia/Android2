@@ -2,7 +2,7 @@
 
 ## What is this
 
-- This is the Android App Twitter Locator, crated for Odobo
+- This is the Android App Twitter Locator
 
 ## How to use this code
 

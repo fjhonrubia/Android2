@@ -9,4 +9,13 @@
     <string name="error_getting_location">There was an error getting the location of this address, please reword your query</string>
     <string name="twiiter_auth_ok">Twitter authorization finished successfully</string>
     <string name="error_network">It looks like there\'s no network connection right now, showing last tweets</string>
+    <string name="authorize_this_app">Authorize this app</string>
+    <string name="tweet_text">Text</string>
+    <string name="user_name_tweet">User Name</string>
+    <string name="invalid_search_address">Invalid search adress</string>
+    <string name="action_last_search">Last Search</string>
+    <string name="no_tweets_in_address">No Tweets found</string>
+    <string name="my_location">My Location</string>
+    <string name="not_last_search">No Search</string>
+    <string name="action_current_search">Current Search</string>
 </resources>
